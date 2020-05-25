@@ -30,17 +30,40 @@
     <span>
       <svg-icon :icon-class="'gaojing'"/>
     </span>
+    <child :testVal="test" @input1="change"></child>
   </div>
 </template>
 
 <script>
+import child from './child'
 export default {
   name: 'HelloWorld',
+  components: {
+    child
+  },
   props: {
     msg: String
   },
+  data() {
+    return {
+      test: 2
+    }
+  },
+  methods: {
+    change(val) {
+      this.test = val
+    }
+  },
   mounted() {
     console.log(1)
+  },
+  watch: {
+    test: {
+      handler: function() {
+        console.log(this.test)
+      },
+      deep: true
+    }
   }
 }
 </script>

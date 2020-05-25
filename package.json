@@ -9,6 +9,7 @@
     "svgo": "svgo -f src/assets/icons/svg --config=src/assets/icons/svgo.yml"
   },
   "dependencies": {
+    "axios": "^0.19.1",
     "core-js": "^3.4.4",
     "vue": "^2.6.10"
   },

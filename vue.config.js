@@ -4,6 +4,14 @@ function resolve(dir) {
 }
 
 module.exports = {
+  configureWebpack: {
+    name: 'personal',
+    resolve: {
+      alias: {
+        '~': resolve('src')
+      }
+    }
+  },
   chainWebpack(config) {
     config.module
       .rule('svg')
